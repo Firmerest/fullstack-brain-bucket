@@ -29,14 +29,14 @@ jobs:
         env:
           SSH_USER: barrycumbie #${{ secrets.SSH_USER }}
           SSH_HOST: 8.234.41.172 #${{ secrets.SSH_HOST }}
-          APP_DIR:  app # ${{ vars.APP_DIR }}
+          APP_DIR:  app/server # ${{ vars.APP_DIR }}
           PM2_NAME: app # ${{ vars.PM2_NAME }}
         run: |
           ssh -i ~/.ssh/deploy_key -T "$SSH_USER@$SSH_HOST" <<EOF
             set -e
 
             cd "$APP_DIR"
-
+          
             git pull
             npm ci
 
