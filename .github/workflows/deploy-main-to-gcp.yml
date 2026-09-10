@@ -6,8 +6,8 @@ name: deploy-main-to-gcp.yml
 # ============================================================
 
 on:
-  push:
-    branches: [main]
+#  push:
+#    branches: [main]
   workflow_dispatch:
 
 
