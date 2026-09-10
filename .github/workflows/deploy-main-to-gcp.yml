@@ -39,7 +39,8 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
 
           ssh-keyscan -H 8.234.41.172 >> ~/.ssh/known_hosts
-
+          chmod 644 ~/.ssh/known_hosts
+          
           # safer than StrictHostKeyChecking=no
           #ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
           #chmod 644 ~/.ssh/known_hosts
